@@ -1,0 +1,39 @@
+<p>list-product </p>
+<div class="row">
+  <div *ngFor="let p of listProduct">
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src="../../assets/img.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Product</h5>
+          <p class="card-text">Price: {{p.price}}</p>
+          <a href="#" class="btn btn-primary">like</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<form>
+  <div class="form-group">
+    <label>id:</label>
+    <input type="number" name="id" class="form-control" [(ngModel)]="product.id">
+  </div>
+  <div class="form-group">
+    <label>title:</label>
+    <input type="text" name="title" class="form-control" [(ngModel)]="product.title">
+  </div>
+  <div class="form-group">
+    <label>price:</label>
+    <input type="number" name="price" class="form-control" [(ngModel)]="product.price">
+  </div>
+  <div class="form-group">
+    <label>quantity:</label>
+    <input type="number" name="quantity" class="form-control" [(ngModel)]="product.quantity">
+  </div>
+
+  <button class="btn-success" (click)="save()" >save</button>
+
+</form>

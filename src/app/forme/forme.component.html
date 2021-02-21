@@ -1,0 +1,37 @@
+
+<label >ID</label>
+<input type="number" name="id" ngModel>
+
+<label>TITLE</label>
+<input type="text" name="title" ngModel required minlength="10" maxlength="13" #test="ngModel">
+
+<div *ngIf="test.invalid" style="color:red">
+
+  <div *ngIf="test.touched">
+    <div *ngIf="test.errors.required">
+      required*
+    </div>
+  </div>
+
+  <div *ngIf="test.errors.minlength">
+    min=10
+  </div>
+
+  <div *ngIf="test.errors.maxlength">
+    max=13
+  </div>
+
+
+</div>
+<label>PRICE</label>
+<input type="number" name="price" ngModel>
+
+
+<label>QUANTITY</label>
+<input type="number" name="quantity" ngModel  #test2="ngModel">
+
+
+<input [disabled]="test.invalid" type="submit" name="send" (click)="showData(test)">
+
+
+
